@@ -1,0 +1,55 @@
+<!-- templates/plagiarism/plagiarism_result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats de la vérification de plagiat</title>
+</head>
+<body>
+    <!-- <h1>Résultats de la vérification de plagiat pour {{ user_document.title }}</h1>
+
+    {% if similar_docs %}
+        <h2>Documents similaires trouvés :</h2>
+        <ul>
+            {% for doc in similar_docs %}
+                <li>
+                    <strong>{{ doc.document.title }}</strong> - {{ doc.similarity|floatformat:2 }}% de similarité
+                    <br>
+                    <h4>Phrases similaires :</h4>
+                    <ul>
+                        {% for phrase in doc.similar_phrases %}
+                            <li>"{{ phrase }}"</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun document similaire trouvé.</p>
+    {% endif %} -->
+
+
+    <h2>Résultats de la vérification du plagiat pour {{ user_document.title }}</h2>
+
+    {% if similar_docs %}
+        <ul>
+            {% for doc in similar_docs %}
+                <li>
+                    <strong>Document:</strong> {{ doc.document.title }} <br>
+                    <strong>Similarité:</strong> {{ doc.similarity }}% <br>
+                    <strong>Similarités trouvées:</strong>
+                    <ul>
+                        {% for phrase in doc.similar_phrases %}
+                            <li>{{ phrase }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune similarité trouvée.</p>
+    {% endif %}
+    
+
+    
+</body>
+</html>

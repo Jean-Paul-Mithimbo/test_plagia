@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Historique des recherches</h2>
+  <ul>
+    {% for record in history %}
+      <li>{{ record.checked_at }} - {{ record.matched_document.title }} - Similarité : {{ record.similarity_score }}%</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

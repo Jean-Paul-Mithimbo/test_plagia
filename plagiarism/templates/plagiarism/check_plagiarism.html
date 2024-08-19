@@ -1,0 +1,22 @@
+<!-- templates/plagiarism/check_plagiarism.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vérification de plagiat</title>
+</head>
+<body>
+    <h1>Vérifier un document</h1>
+<!-- 
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Vérifier le plagiat</button>
+    </form> -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Vérifier le plagiat</button>
+    </form>
+    
+</body>
+</html>
